@@ -1,16 +1,48 @@
-# React + Vite
+💳 Gateway Admin Panel
+Este é o painel administrativo do Gateway de Pagamentos. Desenvolvido em React, ele permite que administradores monitorem transações em tempo real, aprovem ou rejeitem pagamentos pendentes e acompanhem métricas de faturamento.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Funcionalidades
+Dashboard Financeiro: Visualização do faturamento total aprovado e volume de transações pendentes.
 
-Currently, two official plugins are available:
+Gestão de Transações: Lista paginada de todos os pagamentos processados pelo gateway.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Controle Manual: Aprovação ou rejeição de pagamentos com atualização imediata via API.
 
-## React Compiler
+Filtros Inteligentes: Alternância rápida entre visualização total e apenas itens que aguardam ação.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Interface Responsiva: Construída com Tailwind CSS v4 para uma experiência fluida.
 
-## Expanding the ESLint configuration
+🛠 Tecnologias Utilizadas
+React + Vite: Para uma interface rápida e reativa.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tailwind CSS v4: Estilização moderna e otimizada.
+
+Lucide React / Icons: Identificação visual de status e métodos.
+
+Fetch API: Integração assíncrona com o backend em Go.
+
+🏗 Arquitetura do Ecossistema
+Este projeto faz parte de um sistema de microserviços:
+
+Ecommerce API: Origem dos pedidos.
+
+Gateway Payments: Engine de processamento (Go + RabbitMQ + MySQL).
+
+Gateway Admin Panel (Este Repo): Interface de controle do Gateway.
+
+🚦 Como Rodar o Projeto
+Clone o repositório:
+
+Bash
+git clone https://github.com/SEU_USUARIO/gateway-admin-panel.git
+Instale as dependências:
+
+Bash
+npm install
+Configure a URL da API:
+No arquivo App.jsx, certifique-se de que a variável GATEWAY_URL aponta para sua API Go (ex: http://localhost:8080).
+
+Inicie o servidor de desenvolvimento:
+
+Bash
+npm run dev
